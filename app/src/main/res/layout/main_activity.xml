@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:bind="http://schemas.android.com/tools">
+    xmlns:bind="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <import type = "android.view.View"></import>
         <variable
@@ -9,22 +10,43 @@
             type="pl.pszklarska.livedatabinding.viewmodel.MainViewModel" />
     </data>
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
+        android:layout_height="match_parent">
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.kittyName}" />
-
+            android:text="@{viewModel.kittyName}"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:textSize="16sp"
+            android:id="@+id/tv_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{Integer.toString(viewModel.kittyage)}" />
-    </LinearLayout>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@{Integer.toString(viewModel.kittyage)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"/>
+    </android.support.constraint.ConstraintLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical">-->
 
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@{viewModel.kittyName}" />-->
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@{Integer.toString(viewModel.kittyage)}" />-->
+    <!--</LinearLayout>-->
     <!--
     kapt 에러가 나면 text를 다시 써보자.
     -->
